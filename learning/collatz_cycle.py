@@ -22,9 +22,16 @@ def printCollatzCycle(collatzList):
     
     return collatzStrList
 
-testNum = int(input("What number would you like to test? "))
-collatzList = collatzCycle(testNum)
+def main():
+    testNum = int(input("What number would you like to test? "))
+    collatzList = collatzCycle(testNum)
     
-print("Starting number: %d" % collatzList[0])
-print("Length of Collatz Cycle: %d" % len(collatzList))
-print("Collatz Cycle: %s" % " -> ".join(printCollatzCycle(collatzList)))
+    print("Starting number: %d" % collatzList[0])
+    print("Length of Collatz Cycle: %d" % len(collatzList))
+    print("Collatz Cycle: %s" % " -> ".join(printCollatzCycle(collatzList)))
+    
+main()
+tryAgain = input("Would you like to try another number? Y or N? ")
+while (tryAgain.lower().__eq__("y")):
+    main()
+    tryAgain = input("Would you like to try another number? Y or N? ")
